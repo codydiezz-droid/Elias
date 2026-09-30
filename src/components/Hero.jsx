@@ -1,7 +1,7 @@
 import { useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useChaos } from "../chaos";
-import { cutout, photo } from "../photos";
+import { bestPhoto, cutout, photo, variant } from "../photos";
 import { ChaosButton, FinanceWord, Sfx } from "./bits";
 
 function FloatingHeads({ count = 16 }) {
@@ -26,7 +26,7 @@ function FloatingHeads({ count = 16 }) {
           key={h.i}
           src={cutout(h.i + 3)}
           alt=""
-          className="absolute rounded-full border-2 border-white/70 object-cover opacity-70 shadow-xl"
+          className={`absolute rounded-full border-2 border-white/70 object-cover object-[50%_30%] opacity-70 shadow-xl ${variant(h.i)}`}
           style={{ width: h.size, height: h.size, left: `${h.left}%`, top: `${h.top}%` }}
           animate={{ x: [0, h.dx, -h.dx / 2, 0], y: [0, h.dy, h.dy / 3, 0], rotate: [0, h.spin, -h.spin, 0] }}
           transition={{ duration: h.dur, repeat: Infinity, ease: "easeInOut" }}
@@ -128,9 +128,9 @@ export default function Hero() {
         >
           <div className="absolute -inset-4 -z-10 animate-pulse rounded-[2.5rem] bg-gradient-to-tr from-hot via-yellow-300 to-cyber blur-2xl" />
           <img
-            src={photo(0)}
+            src={bestPhoto}
             alt="Elias Sarwana, looking extremely like Elias Sarwana"
-            className="h-[42vh] max-h-[480px] w-[70vw] max-w-[380px] rounded-[2rem] border-8 border-white object-cover shadow-2xl"
+            className="object-[50%_35%] h-[42vh] max-h-[480px] w-[70vw] max-w-[380px] rounded-[2rem] border-8 border-white object-cover shadow-2xl"
           />
           <Sfx text="THE MAN!" className="-left-6 top-6 sm:-left-16" color="bg-cyber" rotate={-14} />
           <Sfx text="THE MYTH!" className="-right-4 top-1/3 sm:-right-20" color="bg-yellow-300" rotate={10} />
@@ -173,6 +173,15 @@ export default function Hero() {
           <br />
           Absolute nonsense by night."
         </motion.p>
+        <motion.a
+          href="#origin"
+          className="mt-4 rounded-full border-2 border-white/40 bg-[#01411C] px-4 py-1 font-bungee text-sm text-white sm:text-base"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2.4 }}
+        >
+          📍 Born in Karachi, Pakistan 🇵🇰
+        </motion.a>
 
         <motion.div
           className="mt-10 flex flex-wrap justify-center gap-5"

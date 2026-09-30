@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useChaos } from "../chaos";
 import { HISTORY, MAP_SPOTS, MULTIVERSE, STATS, WALL_CAPTIONS } from "../content";
-import { cutout, photo, PHOTOS } from "../photos";
+import { bestPhoto, cutout, photo, PHOTOS, variant } from "../photos";
 import { ArepaWord, BreakfastWord, ChaosButton, FinanceWord, ParodyTag, SectionTitle, Sfx } from "./bits";
 
 const CARD_COLORS = ["bg-hot", "bg-acid", "bg-cyber", "bg-yellow-300", "bg-orange-400", "bg-violet-400"];
@@ -27,7 +27,7 @@ export function Multiverse() {
             <img
               src={photo(i + 1)}
               alt={`Elias as ${name}`}
-              className="aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-150 group-hover:rotate-6"
+              className={`aspect-[3/4] w-full object-cover object-[50%_30%] ${variant(i)} transition-transform duration-500 group-hover:scale-150 group-hover:rotate-6`}
             />
             <div className={`absolute inset-x-0 bottom-0 ${CARD_COLORS[i % CARD_COLORS.length]} border-t-4 border-black px-2 py-2 text-center font-bungee text-xs text-black sm:text-sm`}>
               {name === "FINANCE ELIAS" ? <FinanceWord>{name}</FinanceWord> : name === "AREPA ELIAS" ? <ArepaWord>{name}</ArepaWord> : name}
@@ -268,7 +268,7 @@ export function PhotoWall() {
             whileHover={{ rotate: 0, scale: 1.2, zIndex: 20, boxShadow: "0 30px 60px rgba(0,0,0,.5)" }}
             transition={{ type: "spring", stiffness: 200, damping: 15 }}
           >
-            <img src={photo(t.i)} alt={`Elias, ${t.caption}`} className={`w-full object-cover ${t.tall ? "aspect-[3/4]" : "aspect-square"}`} />
+            <img src={photo(t.i)} alt={`Elias, ${t.caption}`} className={`w-full object-cover object-[50%_30%] ${variant(t.i * 3)} ${t.tall ? "aspect-[3/4]" : "aspect-square"}`} />
             <figcaption className="absolute inset-x-0 bottom-1 text-center font-comic text-base text-black">{t.caption}</figcaption>
             {t.i % 6 === 2 && <span className="absolute -right-3 -top-3 text-3xl">📌</span>}
           </motion.figure>
@@ -284,7 +284,7 @@ export function FinalBoss() {
   return (
     <section className="relative flex min-h-svh flex-col items-center justify-center overflow-hidden bg-black px-4 py-24 text-center">
       <motion.img
-        src={photo(PHOTOS.length - 1)}
+        src={bestPhoto}
         alt="The final Elias"
         className="absolute inset-0 h-full w-full object-cover"
         initial={{ opacity: 0, scale: 1.4 }}

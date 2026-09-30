@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { INSIDE_JOKE, QUOTES, ROASTS } from "../content";
-import { cutout, photo } from "../photos";
+import { bestPhoto, cutout, photo } from "../photos";
 import { ArepaWord, ChaosButton, ParodyTag, SectionTitle, Sfx } from "./bits";
 
 export function QuoteMachine() {
@@ -110,9 +110,9 @@ export function ArepaSituation() {
           transition={{ duration: 2.2 }}
         >
           <img
-            src={photo(3)}
+            src={bestPhoto}
             alt="Elias, gazing dramatically into the distance"
-            className="h-[70vh] max-h-[620px] w-[80vw] max-w-md rounded-t-full object-cover shadow-[0_0_120px_rgba(255,64,129,.45)] sepia-[.3]"
+            className="object-[50%_30%] h-[70vh] max-h-[620px] w-[80vw] max-w-md rounded-t-full object-cover shadow-[0_0_120px_rgba(255,64,129,.45)] sepia-[.3]"
           />
           <div className="absolute inset-0 rounded-t-full bg-gradient-to-t from-black via-transparent to-transparent" />
           <p className="absolute bottom-6 left-0 right-0 font-lux text-sm italic text-rose-200">*gazes into the distance*</p>

@@ -2,6 +2,7 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import { ChaosProvider } from "./chaos";
 import { HAS_REAL_PHOTOS } from "./photos";
 import Hero from "./components/Hero";
+import Origin from "./components/Origin";
 import Breakfast, { BreakingNews } from "./components/Breakfast";
 import { ArepaSituation, QuoteMachine, RoastZone } from "./components/Lore";
 import { FinalBoss, Footer, History, Multiverse, PhotoWall, SightingMap, Slideshow, Stats } from "./components/Gallery";
@@ -29,6 +30,7 @@ export default function App() {
       )}
       <Hero />
       <BreakingNews />
+      <Origin />
       <Breakfast />
       <QuoteMachine />
       <EnoughElias seed={8} />

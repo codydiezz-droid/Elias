@@ -62,4 +62,22 @@ export const CUTOUTS = realCutouts.length
 // Deterministic "random" photo by index so every section gets a different Elias.
 export const photo = (i) => PHOTOS[((i % PHOTOS.length) + PHOTOS.length) % PHOTOS.length];
 export const cutout = (i) => CUTOUTS[((i % CUTOUTS.length) + CUTOUTS.length) % CUTOUTS.length];
+// The sharpest photo, used for the giant dramatic spots.
+export const bestPhoto = PHOTOS[0];
+
+// Only a couple of photos? Filters and mirroring turn them into "variants".
+const VARIANTS = [
+  "",
+  "-scale-x-100",
+  "grayscale contrast-125",
+  "sepia saturate-150",
+  "hue-rotate-90 saturate-200",
+  "-scale-x-100 hue-rotate-180 saturate-150",
+  "contrast-150 saturate-200",
+  "-scale-x-100 saturate-200 contrast-125",
+  "-scale-x-100 sepia",
+  "hue-rotate-[270deg] saturate-200",
+];
+export const variant = (i) => VARIANTS[((i % VARIANTS.length) + VARIANTS.length) % VARIANTS.length];
+
 export const randomPhoto = () => PHOTOS[Math.floor(Math.random() * PHOTOS.length)];
