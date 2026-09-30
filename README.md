@@ -4,6 +4,11 @@ A parody fan page made by friends. Nothing on it is a verified fact.
 
 Built with React, Tailwind CSS and Framer Motion (Vite).
 
+## Just the HTML
+
+Open `elias.html` in any browser: everything, photos included, is inside that one file.
+After changing anything, regenerate it with `npm run html`.
+
 ## Run it
 
 ```bash

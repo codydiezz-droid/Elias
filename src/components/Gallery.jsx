@@ -354,7 +354,7 @@ export function Footer() {
       <p className="mt-3 text-sm text-white/80">Best viewed in Netscape Navigator 4.0 at 800×600 with Elias mode enabled.</p>
       <p className="mt-6 max-w-2xl text-xs text-white/60 sm:mx-auto">
         This is a parody fan page made by Elias's friends. Quotes, stats, roasts, maps and history are jokes and inside jokes, not
-        verified facts. No real location information is shown. <a className="underline" href="classic.html">Classic site</a>.
+        verified facts. No real location information is shown.
       </p>
       <p className="mt-4 text-[10px] text-white/40">psst: ↑ ↑ ↓ ↓ ← → ← → B A</p>
     </footer>
