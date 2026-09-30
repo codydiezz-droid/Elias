@@ -139,6 +139,15 @@ export function ArepaSituation() {
             <br />
             Not the food."
           </motion.p>
+          <motion.p
+            className="mt-4 font-lux text-2xl text-rose-100 sm:text-3xl"
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 2.5, duration: 1 }}
+          >
+            <ArepaWord>Arepa</ArepaWord>. The lady from <span className="bg-gradient-to-r from-pink-400 to-cyan-300 bg-clip-text font-black italic text-transparent">Miami</span>. 🌴
+          </motion.p>
 
           <motion.div
             className="mt-12"
@@ -153,12 +162,26 @@ export function ArepaSituation() {
             <p className="mt-6 font-lux italic text-white/80">"No further questions will be answered at this time."</p>
           </motion.div>
 
+          <motion.div
+            className="mt-12 rounded-2xl border-2 border-yellow-300/60 bg-gradient-to-r from-yellow-400/15 via-blue-500/15 to-red-500/15 p-5"
+            initial={{ opacity: 0, scale: 0.6, rotate: 6 }}
+            whileInView={{ opacity: 1, scale: 1, rotate: -1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 3.8, type: "spring" }}
+          >
+            <p className="font-bungee text-lg text-yellow-300 sm:text-xl">🚨 PLOT TWIST 🚨</p>
+            <p className="mt-2 font-lux text-xl italic text-white sm:text-2xl">
+              He also loves the food. The Colombian snack. 🇨🇴🫓
+            </p>
+            <p className="mt-2 font-comic text-sm text-white/70">Two arepas. One Elias. The lore has never been more confusing.</p>
+          </motion.div>
+
           <motion.p
             className="mt-12 font-bungee text-2xl text-gold"
             initial={{ opacity: 0, letterSpacing: "1em" }}
             whileInView={{ opacity: 1, letterSpacing: "0.1em" }}
             viewport={{ once: true }}
-            transition={{ delay: 4.2, duration: 1.2 }}
+            transition={{ delay: 4.8, duration: 1.2 }}
           >
             THE ELIAS LORE DEEPENS.
           </motion.p>

@@ -2,7 +2,7 @@
 // Reminder: this is a parody page between friends. None of this is verified fact.
 
 export const MARQUEE =
-  "BREAKING NEWS 🚨 ELIAS HAS BEEN SPOTTED 🚨 BREAKFAST HAS BEEN COMPROMISED 🚨 AREPAS ARE CONCERNED 🚨 SOUTHWESTERN UNIVERSITY REMAINS ON HIGH ALERT 🚨 ";
+  "BREAKING NEWS 🚨 ELIAS HAS BEEN SPOTTED 🚨 BREAKFAST HAS BEEN COMPROMISED 🚨 AREPAS ARE CONCERNED 🚨 MIAMI HAS BEEN NOTIFIED 🌴 SOUTHWESTERN UNIVERSITY REMAINS ON HIGH ALERT 🚨 ";
 
 export const QUOTES = [
   "Brother.",
@@ -17,7 +17,7 @@ export const QUOTES = [
 
 // The friend-group inside joke. Shown with its own "inside joke" label,
 // never as a real quote.
-export const INSIDE_JOKE = "His love is Arepa.";
+export const INSIDE_JOKE = "His love is Arepa. The lady from Miami. (Also the snack.)";
 
 export const ROASTS = [
   "Certified menace.",
