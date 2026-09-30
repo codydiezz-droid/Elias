@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --font-anton: "Anton", Impact, sans-serif;
+  --font-bungee: "Bungee", Impact, sans-serif;
+  --font-shade: "Bungee Shade", Impact, sans-serif;
+  --font-comic: "Comic Neue", "Comic Sans MS", cursive;
+  --font-lux: "Playfair Display", Georgia, serif;
+  --font-pixel: "Press Start 2P", monospace;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --color-gold: #d4af37;
+  --color-hot: #ff2d95;
+  --color-acid: #c6ff00;
+  --color-cyber: #00e5ff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: #0a0a0a;
+  color: #fff;
+  overflow-x: hidden;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><text y='26' font-size='26'>🚀</text></svg>") 4 4, auto;
+}
+button, a {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><text y='26' font-size='26'>👉</text></svg>") 4 4, pointer;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 22s linear infinite; }
+.animate-marquee-fast { animation: marquee 9s linear infinite; }
+
+@keyframes rainbow {
+  0% { color: #ff1744; } 16% { color: #ff9100; } 33% { color: #ffea00; }
+  50% { color: #00e676; } 66% { color: #2979ff; } 83% { color: #d500f9; } 100% { color: #ff1744; }
+}
+.rainbow { animation: rainbow 2.4s linear infinite; }
+
+@keyframes blink { 50% { opacity: 0; } }
+.blink { animation: blink 0.9s steps(1) infinite; }
+
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+.spin-slow { animation: spin-slow 12s linear infinite; }
+
+.text-stroke { -webkit-text-stroke: 2px #000; paint-order: stroke fill; }
+.text-stroke-white { -webkit-text-stroke: 2px #fff; color: transparent; }
+
+.bg-glitter {
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,.9) 0 1px, transparent 2px),
+    radial-gradient(circle at 70% 60%, rgba(255,255,255,.8) 0 1px, transparent 2px),
+    radial-gradient(circle at 40% 80%, rgba(255,255,255,.7) 0 1px, transparent 2px);
+  background-size: 120px 120px, 90px 90px, 150px 150px;
+}
+.bg-checker {
+  background-image: repeating-conic-gradient(#111 0 25%, #1c1c1c 0 50%);
+  background-size: 48px 48px;
+}
+.bg-map {
+  background:
+    radial-gradient(circle at 30% 40%, #9ccc65 0 18%, transparent 19%),
+    radial-gradient(circle at 70% 55%, #aed581 0 22%, transparent 23%),
+    radial-gradient(circle at 50% 80%, #c5e1a5 0 15%, transparent 16%),
+    #4fc3f7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee, .animate-marquee-fast, .spin-slow, .rainbow, .blink { animation: none; }
+}
